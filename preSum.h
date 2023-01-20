@@ -1,12 +1,11 @@
-#ifndef TINY_PRESUM
-#define TINY_PRESUM
+#ifndef _PRESUM_H
+#define _PRESUM_H
 
 #include <numeric>
 #include <vector>
 #include <iostream>
 #include <iterator>
 #include <functional>
-#include <assert.h>
 using namespace std;
 
 namespace tiny
@@ -70,21 +69,6 @@ namespace tiny
 		// 定义：preSum[i][j] 记录 matrix 中子矩阵 [0, 0, i-1, j-1] 的元素和
 		vector<vector<int>> preSum;
 	};
-
-	void test()
-	{
-		vector<int> v = {2, 2, 2, 2, 2, 2, 2, 2, 2, 2};
-		NumArray numArray(v);
-		assert(numArray.sumRange(0, 0) == 2);
-		assert(numArray.sumRange(0, 1) == 4);
-		assert(numArray.sumRange(1, 4) == 8);
-		// 使用 partial_sum
-		vector<int> v2;
-		std::partial_sum(v.begin(), v.end(), back_inserter(v2));
-		assert(v2[0] == 2);
-		assert(v2[1] == 4);
-		assert(v2[2] == 6);
-	}
 }
 
-#endif
+#endif // _PRESUM_H

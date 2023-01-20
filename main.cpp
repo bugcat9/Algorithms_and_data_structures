@@ -4,7 +4,6 @@
 
 int main()
 {
-	tiny::test();
-	std::cout << "hello";
+	std::cout << "hello world";
 	return 0;
 }

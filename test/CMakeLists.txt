@@ -1,0 +1,5 @@
+if(BOOSTTEST_LIBRARY)
+add_executable(binarysearch_test binarySearch_test.cpp)
+add_executable(difference_test Difference_test.cpp)
+add_executable(preSum_test preSum_test.cpp)
+endif()

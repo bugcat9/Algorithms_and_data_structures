@@ -1,12 +1,11 @@
-#ifndef TINY_BINARY_SEARCH
-#define TINY_BINARY_SEARCH
+#ifndef _BINARYSEARCH_H
+#define _BINARYSEARCH_H
 
 #include <numeric>
 #include <vector>
 #include <iostream>
 #include <iterator>
 #include <functional>
-#include <assert.h>
 using namespace std;
 
 namespace tiny
@@ -97,15 +96,6 @@ namespace tiny
 			return nums[left - 1] == target ? (left - 1) : -1;
 		}
 	};
-
-	void test1()
-	{
-		binarySearch bs;
-		vector<int> nums{1, 2, 3, 4, 5, 5, 5, 6, 6, 7, 8};
-		assert(bs.search(nums, 5) == 4);
-		assert(bs.left_bound(nums, 5) == 4);
-		assert(bs.right_bound(nums, 6) == 8);
-	}
 }
 
-#endif
+#endif // _BINARYSEARCH_H
