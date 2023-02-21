@@ -5,7 +5,7 @@
 BOOST_AUTO_TEST_CASE(case0)
 {
     vector<int> v = {2, 2, 2, 2, 2, 2, 2, 2, 2, 2};
-    tiny::NumArray numArray(v);
+    NumArray numArray(v);
     BOOST_CHECK_EQUAL(numArray.sumRange(0, 0), 2);
     BOOST_CHECK_EQUAL(numArray.sumRange(0, 1), 4);
     BOOST_CHECK_EQUAL(numArray.sumRange(1, 4), 8);
