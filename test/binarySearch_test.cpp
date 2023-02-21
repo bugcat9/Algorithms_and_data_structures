@@ -4,7 +4,7 @@
 
 BOOST_AUTO_TEST_CASE(case0)
 {
-    tiny::binarySearch bs;
+    binarySearch bs;
     vector<int> nums{1, 2, 3, 4, 5, 5, 5, 6, 6, 7, 8};
     BOOST_CHECK_EQUAL(bs.search(nums, 5), 4);
     BOOST_CHECK_EQUAL(bs.left_bound(nums, 5), 4);

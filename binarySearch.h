@@ -8,94 +8,95 @@
 #include <functional>
 using namespace std;
 
-namespace tiny
+/**
+ * @brief 二分查找
+ * 
+ */
+class binarySearch
 {
-	class binarySearch
+public:
+	int search(vector<int> &nums, int target)
 	{
-	public:
-		int search(vector<int> &nums, int target)
-		{
-			// 区间为左闭右开
-			int left = 0;
-			int right = nums.size();
+		// 区间为左闭右开
+		int left = 0;
+		int right = nums.size();
 
-			while (left < right)
+		while (left < right)
+		{
+			int mid = left + (right - left) / 2;
+			if (nums[mid] == target)
 			{
-				int mid = left + (right - left) / 2;
-				if (nums[mid] == target)
-				{
-					right = mid;
-				}
-				else if (nums[mid] < target)
-				{
-					left = mid + 1;
-				}
-				else if (nums[mid] > target)
-				{
-					right = mid;
-				}
+				right = mid;
 			}
-			if (left == nums.size())
-				return -1;
-			return nums[left] == target ? left : -1;
+			else if (nums[mid] < target)
+			{
+				left = mid + 1;
+			}
+			else if (nums[mid] > target)
+			{
+				right = mid;
+			}
+		}
+		if (left == nums.size())
+			return -1;
+		return nums[left] == target ? left : -1;
+	}
+
+	int left_bound(vector<int> &nums, int target)
+	{
+		int left = 0;
+		int right = nums.size();
+
+		while (left < right)
+		{
+			int mid = left + (right - left) / 2;
+
+			if (nums[mid] == target)
+			{
+				right = mid;
+			}
+			else if (nums[mid] < target)
+			{
+				left = mid + 1;
+			}
+			else if (nums[mid] > target)
+			{
+				right = mid;
+			}
 		}
 
-		int left_bound(vector<int> &nums, int target)
+		if (left == nums.size())
+			return -1;
+		return nums[left] == target ? left : -1;
+	}
+
+	int right_bound(vector<int> &nums, int target)
+	{
+		int left = 0;
+		int right = nums.size();
+
+		while (left < right)
 		{
-			int left = 0;
-			int right = nums.size();
+			int mid = left + (right - left) / 2;
 
-			while (left < right)
+			if (nums[mid] == target)
 			{
-				int mid = left + (right - left) / 2;
-
-				if (nums[mid] == target)
-				{
-					right = mid;
-				}
-				else if (nums[mid] < target)
-				{
-					left = mid + 1;
-				}
-				else if (nums[mid] > target)
-				{
-					right = mid;
-				}
+				left = mid + 1;
 			}
-
-			if (left == nums.size())
-				return -1;
-			return nums[left] == target ? left : -1;
+			else if (nums[mid] < target)
+			{
+				left = mid + 1;
+			}
+			else if (nums[mid] > target)
+			{
+				right = mid;
+			}
 		}
 
-		int right_bound(vector<int> &nums, int target)
-		{
-			int left = 0;
-			int right = nums.size();
-
-			while (left < right)
-			{
-				int mid = left + (right - left) / 2;
-
-				if (nums[mid] == target)
-				{
-					left = mid + 1;
-				}
-				else if (nums[mid] < target)
-				{
-					left = mid + 1;
-				}
-				else if (nums[mid] > target)
-				{
-					right = mid;
-				}
-			}
-
-			if (left - 1 < 0)
-				return -1;
-			return nums[left - 1] == target ? (left - 1) : -1;
-		}
-	};
-}
+		if (left - 1 < 0)
+			return -1;
+		return nums[left - 1] == target ? (left - 1) : -1;
+	}
+};
 
 #endif // _BINARYSEARCH_H
