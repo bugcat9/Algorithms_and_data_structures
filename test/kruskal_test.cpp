@@ -1,4 +1,4 @@
-#define BOOST_TEST_MODULE mergeSort
+#define BOOST_TEST_MODULE kruskal
 #include "../kruskal.h"
 #include <boost/test/included/unit_test.hpp>
 
