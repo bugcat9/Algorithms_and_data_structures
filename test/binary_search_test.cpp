@@ -1,12 +1,9 @@
-#define BOOST_TEST_MODULE binary
-#include "../binarySearch.h"
 #include <algorithm>
 #include <iterator>
-#include <boost/test/included/unit_test.hpp>
 
 BOOST_AUTO_TEST_CASE(case0)
 {
-    binarySearch bs;
+     bs;
     vector<int> nums{1, 2, 3, 4, 5, 5, 5, 6, 6, 7, 8};
     BOOST_CHECK_EQUAL(bs.search(nums, 5), 4);
     BOOST_CHECK_EQUAL(binary_search(nums.begin(), nums.end(), 5), true);
