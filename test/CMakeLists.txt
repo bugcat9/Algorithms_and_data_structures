@@ -11,7 +11,7 @@ set(gtest ${gtestd} ${gtest_maind})
 include_directories("${GTEST_DIR}\\googletest\\include")
 
 # 创建可执行目标
-add_executable(main1 main.cpp)
+add_executable(unitest main.cpp)
 
 # 链接静态库到可执行目标
-target_link_libraries(main1 ${gtest})
+target_link_libraries(unitest ${gtest})

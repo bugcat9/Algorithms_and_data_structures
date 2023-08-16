@@ -1,11 +1,15 @@
 SET(ALGORITHM_FILE 
+    quick_sort.h
+    quick_sort.cpp
+    merge_sort.h
+    merge_sort.cpp
     binary_search.h
     binary_search.cpp
-    bst.h
-    bst.cpp
-    Difference.h
-    dijkstra.h
-    )
+    precision_compute.h
+    precision_compute.cpp
+    pre_sum.h
+    pre_sum.cpp
+)
 
 add_library(algorithm STATIC ${ALGORITHM_FILE})
 
@@ -13,4 +17,4 @@ add_library(algorithm STATIC ${ALGORITHM_FILE})
 add_executable(main main.cpp)
 
 # 链接静态库到可执行目标
-target_link_libraries(main algorithm)
+# target_link_libraries(main algorithm)
