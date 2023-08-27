@@ -9,6 +9,10 @@ SET(ALGORITHM_FILE
     precision_compute.cpp
     pre_sum.h
     pre_sum.cpp
+    trie.h
+    trie.cpp
+    uf.h
+    uf.cpp
 )
 
 add_library(algorithm STATIC ${ALGORITHM_FILE})
