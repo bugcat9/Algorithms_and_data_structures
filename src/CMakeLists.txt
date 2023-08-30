@@ -13,12 +13,18 @@ SET(ALGORITHM_FILE
     trie.cpp
     uf.h
     uf.cpp
+    dijkstra.h
+    dijkstra.cpp
+    bellman_ford.h
+    bellman_ford.cpp
+    floyd.h
+    floyd.cpp
 )
 
 add_library(algorithm STATIC ${ALGORITHM_FILE})
 
 # 创建可执行目标
-add_executable(main main.cpp)
+# add_executable(main main.cpp)
 
 # 链接静态库到可执行目标
 # target_link_libraries(main algorithm)

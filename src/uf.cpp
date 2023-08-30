@@ -20,7 +20,7 @@ int UF::Find(int x)
 	return parent_[x];
 }
 
-int UF::Union(int p, int q)
+void UF::Union(int p, int q)
 {
 	int rootP = Find(p);
 	int rootQ = Find(q);

@@ -11,7 +11,7 @@ public:
 
 	int Find(int x);
 
-	int Union(int p, int q);
+	void Union(int p, int q);
 
 	int Count();
 
