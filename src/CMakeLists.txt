@@ -19,6 +19,14 @@ SET(ALGORITHM_FILE
     bellman_ford.cpp
     floyd.h
     floyd.cpp
+    prim.h
+    prim.cpp
+    kruskal.h
+    kruskal.cpp
+    bipartite.h
+    bipartite.cpp
+    hungarian.h
+    hungarian.cpp
 )
 
 add_library(algorithm STATIC ${ALGORITHM_FILE})
