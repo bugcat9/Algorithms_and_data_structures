@@ -27,6 +27,12 @@ SET(ALGORITHM_FILE
     bipartite.cpp
     hungarian.h
     hungarian.cpp
+    prime.h
+    prime.cpp
+    factor.h
+    factor.cpp
+    binpow.h
+    binpow.cpp
 )
 
 add_library(algorithm STATIC ${ALGORITHM_FILE})

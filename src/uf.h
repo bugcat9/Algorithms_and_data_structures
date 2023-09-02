@@ -2,7 +2,9 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-
+/**
+ * @brief ²¢²é¼¯
+*/
 class UF
 {
 public:

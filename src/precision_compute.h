@@ -3,6 +3,12 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+/**
+ * @brief 高精度计算，大数加减乘除
+ * @param nums1 
+ * @param nums2 
+ * @return 
+*/
 
 vector<int> Add(vector<int>& nums1, vector<int>& nums2);
 
