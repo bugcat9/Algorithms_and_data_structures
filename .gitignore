@@ -443,3 +443,5 @@ _deps
 *.out
 *.app
 build
+
+.vscode

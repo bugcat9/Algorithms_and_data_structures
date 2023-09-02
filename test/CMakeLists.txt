@@ -1,17 +1,27 @@
-if(BOOSTTEST_LIBRARY)
-add_executable(binarysearch_test binarySearch_test.cpp)
-add_executable(difference_test Difference_test.cpp)
-add_executable(preSum_test preSum_test.cpp)
-add_executable(bst_test BST_test.cpp)
-add_executable(rabinkarp_test rabinKarp_test.cpp)
-add_executable(dijkstra_test dijkstra_test.cpp)
-add_executable(uf_test uf_test.cpp)
-add_executable(mergesort_test mergeSort_test.cpp)
-add_executable(quicksort_test quickSort_test.cpp)
-add_executable(kruskal_test kruskal_test.cpp)
-add_executable(prim_test prim_test.cpp)
-add_executable(lru_test LRU_test.cpp)
-add_executable(lfu_test LFU_test.cpp)
-add_executable(trie_test trie_test.cpp)
+# 设置gtest目录
+set(GTEST_DIR "D:/File/work_space/googletest-1.13.0")
 
+if (WIN32)
+find_library(GTESTD gtest HINTS "${GTEST_DIR}/build/lib/Debug" required)
+find_library(GTEST_MAIND gtest_main HINTS "${GTEST_DIR}/build/lib/Debug" required)
+else()
+find_library(GTESTD gtest HINTS "${GTEST_DIR}/build/lib" required)
+find_library(GTEST_MAIND gtest_main HINTS "${GTEST_DIR}/build/lib" required)
 endif()
+
+set(GTEST ${GTESTD} ${GTEST_MAIND})
+include_directories("${GTEST_DIR}/googletest/include")
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src)
+
+
+set(TEST_FILE
+	main.cpp 
+	dijkstra_test.cpp 
+	prime_test.cpp
+)
+
+# 创建可执行目标
+add_executable(unittest ${TEST_FILE})
+
+# 链接静态库到可执行目标
+target_link_libraries(unittest ${GTEST} algorithm)
