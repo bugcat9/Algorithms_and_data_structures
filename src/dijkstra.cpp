@@ -1,5 +1,6 @@
 #include"dijkstra.h"
 #include <queue>
+#include <limits.h>
 
 vector<int> Dijkstra(int start, const vector<vector<PII>>& graph)
 {

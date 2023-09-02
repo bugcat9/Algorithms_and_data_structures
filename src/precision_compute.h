@@ -2,6 +2,7 @@
 
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 /**
  * @brief 高精度计算，大数加减乘除

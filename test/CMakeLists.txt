@@ -1,9 +1,18 @@
-set(GTEST_DIR "D:\\File\\work_space\\googletest-1.13.0")
-find_library(gtestd gtest HINTS "${GTEST_DIR}\\build\\lib\\Debug" required)
-find_library(gtest_maind gtest_main HINTS "${GTEST_DIR}\\build\\lib\\Debug" required)
-set(gtest ${gtestd} ${gtest_maind})
-include_directories("${GTEST_DIR}\\googletest\\include")
+# 设置gtest目录
+set(GTEST_DIR "D:/File/work_space/googletest-1.13.0")
+
+if (WIN32)
+find_library(GTESTD gtest HINTS "${GTEST_DIR}/build/lib/Debug" required)
+find_library(GTEST_MAIND gtest_main HINTS "${GTEST_DIR}/build/lib/Debug" required)
+else()
+find_library(GTESTD gtest HINTS "${GTEST_DIR}/build/lib" required)
+find_library(GTEST_MAIND gtest_main HINTS "${GTEST_DIR}/build/lib" required)
+endif()
+
+set(GTEST ${GTESTD} ${GTEST_MAIND})
+include_directories("${GTEST_DIR}/googletest/include")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src)
+
 
 set(TEST_FILE
 	main.cpp 
@@ -12,7 +21,7 @@ set(TEST_FILE
 )
 
 # 创建可执行目标
-add_executable(unitest ${TEST_FILE})
+add_executable(unittest ${TEST_FILE})
 
 # 链接静态库到可执行目标
-target_link_libraries(unitest ${gtest} algorithm)
+target_link_libraries(unittest ${GTEST} algorithm)

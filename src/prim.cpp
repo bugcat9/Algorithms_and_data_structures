@@ -1,4 +1,5 @@
 #include "prim.h"
+#include <limits.h>
 
 int Prim(const vector<vector<int>>& graph)
 {
