@@ -4,7 +4,7 @@
 using namespace std;
 
 /** 
-* @brief  最大公约数
+* @brief  鏈�澶у叕绾︽暟
 * @param a  
 * @param b  
 * @return 

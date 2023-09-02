@@ -3,7 +3,7 @@
 #include<vector>
 using namespace std;
 /**
- * @brief ²¢²é¼¯
+ * @brief å¹¶æŸ¥é›†
 */
 class UF
 {

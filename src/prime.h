@@ -4,14 +4,14 @@
 using namespace std;
 
 /** 
-* @brief ÅĞ¶ÏÖÊÊı
+* @brief åˆ¤æ–­è´¨æ•°
 * @param x  
 * @return 
 */
 bool IsPrime(int x);
 
 /** 
-* @brief ÏßĞÔÉ¸·¨£¬µÃµ½nÒÔÄÚ(°üÀ¨n)µÄËùÓĞÖÊÊı
+* @brief çº¿æ€§ç­›æ³•ï¼Œå¾—åˆ°nä»¥å†…(åŒ…æ‹¬n)çš„æ‰€æœ‰è´¨æ•°
 * @param n  
 * @return 
 */

@@ -5,10 +5,10 @@ using namespace std;
 
 using  PII = pair<int, int>;
 /**
-* @brief  ¶ÓÁĞÓÅ»¯Bellman-FordËã·¨¡ª¡ªSPFAËã·¨
+* @brief  é˜Ÿåˆ—ä¼˜åŒ–Bellman-Fordç®—æ³•â€”â€”SPFAç®—æ³•
 * 
 * @param start
-* @param graph ÆäÖĞpair firstÊÇÏàÁÚ½Úµã£¬second ÊÇÈ¨ÖØ
+* @param graph å…¶ä¸­pair firstæ˜¯ç›¸é‚»èŠ‚ç‚¹ï¼Œsecond æ˜¯æƒé‡
 * @return
 */
 vector<int> BllmanFord(int start, const vector<vector<PII>>& graph);

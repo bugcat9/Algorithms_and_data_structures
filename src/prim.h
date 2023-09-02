@@ -4,8 +4,8 @@
 using namespace std;
 
 /** 
-* @brief ×îĞ¡Éú³ÉÊ÷  
-* @param graph  graph[i][j]´ú±íµÚi¸öµãµ½µÚj¸öµãµÄ¾àÀë
-* @return ×îĞ¡Éú³ÉÊ÷µÄ¾àÀë
+* @brief æœ€å°ç”Ÿæˆæ ‘  
+* @param graph  graph[i][j]ä»£è¡¨ç¬¬iä¸ªç‚¹åˆ°ç¬¬jä¸ªç‚¹çš„è·ç¦»
+* @return æœ€å°ç”Ÿæˆæ ‘çš„è·ç¦»
 */
 int Prim(const vector<vector<int>>& graph);

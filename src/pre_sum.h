@@ -3,12 +3,12 @@
 #include<vector>
 using namespace std;
 
-// Ò»Î¬Ç°×ººÍ
+// ä¸€ç»´å‰ç¼€å’Œ
 class PreSum {
 public:
 	PreSum(vector<int>& nums);
 
-	/* ²éÑ¯±ÕÇø¼ä [left, right] µÄÀÛ¼ÓºÍ */
+	/* æŸ¥è¯¢é—­åŒºé—´ [left, right] çš„ç´¯åŠ å’Œ */
 	int Query(int left, int right);
 private:
 	vector<int> pre_sum_;

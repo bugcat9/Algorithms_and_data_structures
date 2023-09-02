@@ -5,10 +5,10 @@
 using namespace std;
 
 /**
- * @brief kruskal ×îĞ¡Éú³ÉÊ÷Ëã·¨
+ * @brief kruskal æœ€å°ç”Ÿæˆæ ‘ç®—æ³•
  *
  * @param n
- * @param edges edges[i][j]±íÊ¾iºÍjµÄ¾àÀë
+ * @param edges edges[i][j]è¡¨ç¤ºiå’Œjçš„è·ç¦»
  * @return int
  */
 int Kruskal(int n, vector<vector<int>>& edges);

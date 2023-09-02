@@ -4,7 +4,7 @@
 using namespace std;
 
 /**
- * @brief ¿ìËÙÅÅĞò
+ * @brief å¿«é€Ÿæ’åº
  *
  */
 void QuickSort(vector<int>& nums, int l, int r);

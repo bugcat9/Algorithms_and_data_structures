@@ -10,7 +10,7 @@ struct TrieNode
 	bool is_end = false;
 	vector<TrieNode*> children;
 	/**
-	 * @brief 26´ú±í26¸ö×ÖÄ¸
+	 * @brief 26ä»£è¡¨26ä¸ªå­—æ¯
 	*/
 	TrieNode() : children(26, nullptr), is_end(false)
 	{
@@ -18,7 +18,7 @@ struct TrieNode
 };
 
 /**
- * @brief ×ÖµäÊ÷
+ * @brief å­—å…¸æ ‘
 */
 class Trie
 {

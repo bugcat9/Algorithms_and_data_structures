@@ -3,22 +3,22 @@
 
 vector<int> Dijkstra(int start, const vector<vector<PII>>& graph)
 {
-	// Í¼ÖĞ½ÚµãµÄ¸öÊı
+	// å›¾ä¸­èŠ‚ç‚¹çš„ä¸ªæ•°
 	int n = graph.size();
-	// ¼ÇÂ¼×î¶ÌÂ·¾¶µÄÈ¨ÖØ£¬Äã¿ÉÒÔÀí½âÎª dp table
-	// ¶¨Òå£ºdistTo[i] µÄÖµ¾ÍÊÇ½Úµã start µ½´ï½Úµã i µÄ×î¶ÌÂ·¾¶È¨ÖØ
-	// Çó×îĞ¡Öµ£¬ËùÒÔ dp table ³õÊ¼»¯ÎªÕıÎŞÇî
+	// è®°å½•æœ€çŸ­è·¯å¾„çš„æƒé‡ï¼Œä½ å¯ä»¥ç†è§£ä¸º dp table
+	// å®šä¹‰ï¼šdistTo[i] çš„å€¼å°±æ˜¯èŠ‚ç‚¹ start åˆ°è¾¾èŠ‚ç‚¹ i çš„æœ€çŸ­è·¯å¾„æƒé‡
+	// æ±‚æœ€å°å€¼ï¼Œæ‰€ä»¥ dp table åˆå§‹åŒ–ä¸ºæ­£æ— ç©·
 	vector<int> distTo(n, INT_MAX);
-	// base case£¬start µ½ start µÄ×î¶Ì¾àÀë¾ÍÊÇ 0
+	// base caseï¼Œstart åˆ° start çš„æœ€çŸ­è·ç¦»å°±æ˜¯ 0
 	distTo[start] = 0;
 
 	auto cmp = [&](const auto& a, const auto& b)
 	{
 		return a.second > b.second;
 	};
-	// Ğ¡¸ù¶Ñ
+	// å°æ ¹å †
 	priority_queue<PII, vector<PII>, decltype(cmp)> pq(cmp);
-	// ´ÓÆğµã start ¿ªÊ¼½øĞĞ BFS
+	// ä»èµ·ç‚¹ start å¼€å§‹è¿›è¡Œ BFS
 	pq.push({ start,0 });
 	while (!pq.empty())
 	{
@@ -29,22 +29,22 @@ vector<int> Dijkstra(int start, const vector<vector<PII>>& graph)
 
 		if (curDistFromStart > distTo[curNodeID])
 		{
-			// ÒÑ¾­ÓĞÒ»Ìõ¸ü¶ÌµÄÂ·¾¶µ½´ï curNode ½ÚµãÁË
+			// å·²ç»æœ‰ä¸€æ¡æ›´çŸ­çš„è·¯å¾„åˆ°è¾¾ curNode èŠ‚ç‚¹äº†
 			continue;
 		}
-		// ½« curNode µÄÏàÁÚ½Úµã×°Èë¶ÓÁĞ
+		// å°† curNode çš„ç›¸é‚»èŠ‚ç‚¹è£…å…¥é˜Ÿåˆ—
 		for (const pair<int, int>& neighbor : graph[curNodeID])
 		{
 			//auto&& [nextNodeID, weight] = neighbor;
 			auto nextNodeID = neighbor.first;
 			auto weight = neighbor.second;
-			// ¿´¿´´Ó curNode ´ïµ½ nextNode µÄ¾àÀëÊÇ·ñ»á¸ü¶Ì
+			// çœ‹çœ‹ä» curNode è¾¾åˆ° nextNode çš„è·ç¦»æ˜¯å¦ä¼šæ›´çŸ­
 			int distToNextNode = distTo[curNodeID] + weight;
 			if (distTo[nextNodeID] > distToNextNode)
 			{
-				// ¸üĞÂ dp table
+				// æ›´æ–° dp table
 				distTo[nextNodeID] = distToNextNode;
-				// ½«Õâ¸ö½ÚµãÒÔ¼°¾àÀë·ÅÈë¶ÓÁĞ
+				// å°†è¿™ä¸ªèŠ‚ç‚¹ä»¥åŠè·ç¦»æ”¾å…¥é˜Ÿåˆ—
 				pq.push({ nextNodeID, distToNextNode });
 			}
 		}

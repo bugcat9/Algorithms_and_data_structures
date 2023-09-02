@@ -3,15 +3,15 @@
 
 vector<int> BllmanFord(int start, const vector<vector<PII>>& graph)
 {
-	// Í¼ÖĞ½ÚµãµÄ¸öÊı
+	// å›¾ä¸­èŠ‚ç‚¹çš„ä¸ªæ•°
 	int n = graph.size();
-	// ¼ÇÂ¼×î¶ÌÂ·¾¶µÄÈ¨ÖØ£¬Äã¿ÉÒÔÀí½âÎª dp table
-	// ¶¨Òå£ºdistTo[i] µÄÖµ¾ÍÊÇ½Úµã start µ½´ï½Úµã i µÄ×î¶ÌÂ·¾¶È¨ÖØ
-	// Çó×îĞ¡Öµ£¬ËùÒÔ dp table ³õÊ¼»¯ÎªÕıÎŞÇî
+	// è®°å½•æœ€çŸ­è·¯å¾„çš„æƒé‡ï¼Œä½ å¯ä»¥ç†è§£ä¸º dp table
+	// å®šä¹‰ï¼šdistTo[i] çš„å€¼å°±æ˜¯èŠ‚ç‚¹ start åˆ°è¾¾èŠ‚ç‚¹ i çš„æœ€çŸ­è·¯å¾„æƒé‡
+	// æ±‚æœ€å°å€¼ï¼Œæ‰€ä»¥ dp table åˆå§‹åŒ–ä¸ºæ­£æ— ç©·
 	vector<int> dist(n, INT_MAX);
-	// base case£¬start µ½ start µÄ×î¶Ì¾àÀë¾ÍÊÇ 0
+	// base caseï¼Œstart åˆ° start çš„æœ€çŸ­è·ç¦»å°±æ˜¯ 0
 	dist[start] = 0;
-	// ´æ´¢Ã¿¸öµãÊÇ·ñÔÚ¶ÓÁĞÖĞ
+	// å­˜å‚¨æ¯ä¸ªç‚¹æ˜¯å¦åœ¨é˜Ÿåˆ—ä¸­
 	vector<bool> visit;
 	queue<int> q;
 	q.push(start);
@@ -21,7 +21,7 @@ vector<int> BllmanFord(int start, const vector<vector<PII>>& graph)
 	{
 		auto cur = q.front();
 		q.pop();
-		// ÒÑ³ö¶Ó£¬Òò´Ë¶ÓÁĞ²»ÔÙ°üº¬¶¥µãt£¬ĞèÒªÖØÖÃÎªfalse
+		// å·²å‡ºé˜Ÿï¼Œå› æ­¤é˜Ÿåˆ—ä¸å†åŒ…å«é¡¶ç‚¹tï¼Œéœ€è¦é‡ç½®ä¸ºfalse
 		visit[cur] = false;
 
 		for (const pair<int, int>& neighbor : graph[cur])
@@ -32,7 +32,7 @@ vector<int> BllmanFord(int start, const vector<vector<PII>>& graph)
 			if (dist[nextNodeID] > dist[cur] + weight)
 			{
 				dist[nextNodeID] = dist[cur] + weight;
-				if (!visit[nextNodeID])     // Èç¹û¶ÓÁĞÖĞÒÑ´æÔÚnextNodeID£¬Ôò²»ĞèÒª½«nextNodeIDÖØ¸´²åÈë
+				if (!visit[nextNodeID])     // å¦‚æœé˜Ÿåˆ—ä¸­å·²å­˜åœ¨nextNodeIDï¼Œåˆ™ä¸éœ€è¦å°†nextNodeIDé‡å¤æ’å…¥
 				{
 					q.push(nextNodeID);
 					visit[nextNodeID] = true;

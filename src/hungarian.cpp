@@ -6,8 +6,8 @@ bool find(const vector<vector<int>>& graph, int x, vector<int>& match, vector<bo
 	{
 		if (!visit[j])
 		{
-			visit[j] = true;                           // ±ê¼ÇÒÑ±éÀú
-			if (!match[j] || find(graph, match[j], match, visit))          // jÎ´±»Æ¥Åä£¬»òjÒÑ¾­Æ¥Åäµ«ÆäÅä¶Ô¶ÔÏó¿ÉÑ¡ÆäËüµÄÆ¥Åä
+			visit[j] = true;                           // æ ‡è®°å·²éå†
+			if (!match[j] || find(graph, match[j], match, visit))          // jæœªè¢«åŒ¹é…ï¼Œæˆ–jå·²ç»åŒ¹é…ä½†å…¶é…å¯¹å¯¹è±¡å¯é€‰å…¶å®ƒçš„åŒ¹é…
 			{
 				match[j] = x;
 				return true;
@@ -21,7 +21,7 @@ int Hungarian(const vector<vector<int>>& graph)
 {
 	int res = 0;
 	int n = graph.size();
-	// ´æ´¢µÚ¶ş¸ö¼¯ºÏÖĞµÄÃ¿¸öµãµ±Ç°Æ¥ÅäµÄµÚÒ»¸ö¼¯ºÏÖĞµÄµãÊÇÄÄ¸ö
+	// å­˜å‚¨ç¬¬äºŒä¸ªé›†åˆä¸­çš„æ¯ä¸ªç‚¹å½“å‰åŒ¹é…çš„ç¬¬ä¸€ä¸ªé›†åˆä¸­çš„ç‚¹æ˜¯å“ªä¸ª
 	vector<int> match(n);
 	for (int i = 0; i < n; i++)
 	{

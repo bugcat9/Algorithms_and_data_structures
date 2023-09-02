@@ -1,14 +1,14 @@
 #include "bipartite.h"
 
-// ²ÎÊı£ºu±íÊ¾µ±Ç°½Úµã£¬c±íÊ¾µ±Ç°µãµÄÑÕÉ«
+// å‚æ•°ï¼šuè¡¨ç¤ºå½“å‰èŠ‚ç‚¹ï¼Œcè¡¨ç¤ºå½“å‰ç‚¹çš„é¢œè‰²
 bool dfs(int u, int c, const vector<vector<int>>& graph, vector<int>& color)
 {
-	color[u] = c;       // È¾É«
+	color[u] = c;        // æŸ“è‰²
 	for (auto& j : graph[u])
 	{
 		if (!color[j])
 		{
-			if (!dfs(j, 3 - c, graph, color)) return false;       // ÓÃ3-cÊµÏÖ½»ÌæÈ¾É«
+			if (!dfs(j, 3 - c, graph, color)) return false;       // ç”¨3-cå®ç°äº¤æ›¿æŸ“è‰²
 		}
 		else if (color[j] == c) return false;
 	}
@@ -23,7 +23,7 @@ bool Bipartite(const vector<vector<int>>& graph)
 	vector<int> color(n);
 	for (int i = 0; i < n; i++)
 		if (!color[i])
-			if (!dfs(i, 1, graph, color))     // ÕâÀï²»ĞèÒª3-c£¬ÒòÎªÕâÀï½øÈëµÄ¶¼ÊÇÎ´È¾É«µÄÆğµã£¬»»¾ä»°ËµÊÇÉ­ÁÖÁíÒ»¿ÃÊ÷µÄ¸ù
+			if (!dfs(i, 1, graph, color))// è¿™é‡Œä¸éœ€è¦3-cï¼Œå› ä¸ºè¿™é‡Œè¿›å…¥çš„éƒ½æ˜¯æœªæŸ“è‰²çš„èµ·ç‚¹ï¼Œæ¢å¥è¯è¯´æ˜¯æ£®æ—å¦ä¸€æ£µæ ‘çš„æ ¹
 			{
 				flag = false;
 				break;

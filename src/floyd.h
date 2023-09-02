@@ -4,7 +4,7 @@
 using namespace std;
 
 /** 
-* @brief ¶àÔ´×î¶ÌÂ·¾¶  
-* @param dist[i][j] ´ú±íµÚi¸öµãµ½µÚj¸öµãµÄ¾àÀë£¬Èç¹ûÎŞ·¨µ½´ï¾àÀëÎªINT_MAX
+* @brief å¤šæºæœ€çŸ­è·¯å¾„  
+* @param dist[i][j] ä»£è¡¨ç¬¬iä¸ªç‚¹åˆ°ç¬¬jä¸ªç‚¹çš„è·ç¦»ï¼Œå¦‚æœæ— æ³•åˆ°è¾¾è·ç¦»ä¸ºINT_MAX
 */
 void Floyd(vector<vector<int>>& dist);

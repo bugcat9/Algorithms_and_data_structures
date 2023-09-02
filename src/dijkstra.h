@@ -7,10 +7,10 @@ using  PII = pair<int, int>;
 
 
 /**
- * @brief ÊäÈëÒ»·ùÍ¼ºÍÒ»¸öÆğµã start£¬¼ÆËã start µ½ÆäËû½ÚµãµÄ×î¶Ì¾àÀë
+ * @brief è¾“å…¥ä¸€å¹…å›¾å’Œä¸€ä¸ªèµ·ç‚¹ startï¼Œè®¡ç®— start åˆ°å…¶ä»–èŠ‚ç‚¹çš„æœ€çŸ­è·ç¦»
  *
  * @param start
- * @param graph ÆäÖĞpair firstÊÇÏàÁÚ½Úµã£¬second ÊÇÈ¨ÖØ
+ * @param graph å…¶ä¸­pair firstæ˜¯ç›¸é‚»èŠ‚ç‚¹ï¼Œsecond æ˜¯æƒé‡
  * @return vector<int>
  */
 vector<int> Dijkstra(int start, const vector<vector<PII>>& graph);

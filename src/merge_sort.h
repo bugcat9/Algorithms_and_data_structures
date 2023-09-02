@@ -4,7 +4,7 @@
 using namespace std;
 
 /**
- * @brief ¹é²¢ÅÅĞò
+ * @brief å½’å¹¶æ’åº
  *
  */
 void MergeSort(vector<int>& nums, int l, int r);

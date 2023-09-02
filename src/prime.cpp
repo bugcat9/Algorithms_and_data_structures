@@ -3,7 +3,7 @@
 bool IsPrime(int x)
 {
 	if (x < 2) return false;
-	for (int i = 2; i <= x / i; i++)              // 注意循环条件
+	for (int i = 2; i <= x / i; i++)              // 娉ㄦ剰寰幆鏉′欢
 		if (x % i == 0)
 			return false;
 	return true;
@@ -18,8 +18,8 @@ int GetPrimes(int n)
 		if (!st[i]) primes.push_back(i);
 		for (int j = 0; j < primes.size() && primes[j] <= n / i; j++)
 		{
-			st[primes[j] * i] = true;               // 用最小质因子去筛合数primes[j] * i
-			if (i % primes[j] == 0) break;          // 若prime[j]是i的最小质因子，则prime[j+1] * i的最小质因子依旧是prime[j]
+			st[primes[j] * i] = true;               // 鐢ㄦ渶灏忚川鍥犲瓙鍘荤瓫鍚堟暟primes[j] * i
+			if (i % primes[j] == 0) break;          // 鑻rime[j]鏄痠鐨勬渶灏忚川鍥犲瓙锛屽垯prime[j+1] * i鐨勬渶灏忚川鍥犲瓙渚濇棫鏄痯rime[j]
 		}
 	}
 	return primes.size();

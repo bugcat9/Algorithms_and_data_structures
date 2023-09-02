@@ -4,8 +4,8 @@
 using namespace std;
 
 /** 
-* @brief  ¶ş·ÖÍ¼µÄ×î´óÆ¥Åä ĞÙÑÀÀûËã·¨
-* @param graph graph[i] ±íÊ¾µãiµÄÁÚ¾Ó
+* @brief  äºŒåˆ†å›¾çš„æœ€å¤§åŒ¹é… åŒˆç‰™åˆ©ç®—æ³•
+* @param graph graph[i] è¡¨ç¤ºç‚¹içš„é‚»å±…
 * @return 
 */
 int Hungarian(const vector<vector<int>>& graph);

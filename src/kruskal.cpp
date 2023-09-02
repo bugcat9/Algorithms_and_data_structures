@@ -7,23 +7,23 @@ int Kruskal(int n, vector<vector<int>>& edges)
 	sort(edges.begin(), edges.end(), [&](auto& a, auto& b)
 		{ return a[2] < b[2]; });
 
-	// ¼ÇÂ¼×îĞ¡Éú³ÉÊ÷µÄÈ¨ÖØÖ®ºÍ
+	// è®°å½•æœ€å°ç”Ÿæˆæ ‘çš„æƒé‡ä¹‹å’Œ
 	int mst = 0;
 	for (auto& edge : edges)
 	{
 		int u = edge[0];
 		int v = edge[1];
 		int weight = edge[2];
-		// ÈôÕâÌõ±ß»á²úÉú»·£¬Ôò²»ÄÜ¼ÓÈë mst
+		// è‹¥è¿™æ¡è¾¹ä¼šäº§ç”Ÿç¯ï¼Œåˆ™ä¸èƒ½åŠ å…¥ mst
 		if (uf.Connected(u, v))
 		{
 			continue;
 		}
-		// ÈôÕâÌõ±ß²»»á²úÉú»·£¬ÔòÊôÓÚ×îĞ¡Éú³ÉÊ÷
+		// è‹¥è¿™æ¡è¾¹ä¸ä¼šäº§ç”Ÿç¯ï¼Œåˆ™å±äºæœ€å°ç”Ÿæˆæ ‘
 		mst += weight;
 		uf.Union(u, v);
 	}
-	// ±£Ö¤ËùÓĞ½Úµã¶¼±»Á¬Í¨
-	// ËµÃ÷ËùÓĞ½Úµã±»Á¬Í¨
+	// ä¿è¯æ‰€æœ‰èŠ‚ç‚¹éƒ½è¢«è¿é€š
+	// è¯´æ˜æ‰€æœ‰èŠ‚ç‚¹è¢«è¿é€š
 	return uf.Count() == 1 ? mst : -1;
 }

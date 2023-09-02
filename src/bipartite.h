@@ -4,8 +4,8 @@
 using namespace std;
 
 /** 
-* @brief  ÅÐ¶Ï¶þ·ÖÍ¼ È¾É«·¨
-* @param graph graph[i] ±íÊ¾µãiµÄÁÚ¾Ó
+* @brief  åˆ¤æ–­äºŒåˆ†å›¾ æŸ“è‰²æ³•
+* @param graph graph[i] è¡¨ç¤ºç‚¹içš„é‚»å±…
 * @return 
 */
 bool Bipartite(const vector<vector<int>>& graph);
